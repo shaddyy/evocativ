@@ -1,0 +1,94 @@
+<%= render :partial => 'layouts/topnav'%>
+
+<style>
+ul
+{
+    list-style-type: none;
+}
+</style>
+<div class="container">
+<h1>New Workout</h1>
+
+<%= form_for :workout, url: workouts_path do |f| %>
+
+<% if @workout.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@workout.errors.count, "error") %> prohibited
+        this workout from being saved:
+      </h2>
+      <ul>
+        <% @workout.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<div class="jumbotron">
+ <h3>Body Part:</h3>
+  <table class ="table table-striped">
+  	<td>
+  		<%= f.radio_button :body, 'Lower a' %>
+  		<%= label :body_lowera, 'Lower A' %>
+  	</td>
+  	<td>
+   		<%= f.radio_button :body, 'Upper a' %>
+  		<%= label :body_uppera, 'Upper A' %>
+  	</td>
+  	<td>
+  		<%= f.radio_button :body, 'Legs a' %>
+  		<%= label :body_legsa, 'Legs A' %>
+  	</td>
+  	<td>
+  		<%= f.radio_button :body, 'Push a' %>
+  		<%= label :body_pusha, 'Push A' %>
+  	</td>
+  	<td>
+  		<%= f.radio_button :body, 'Pull a' %>
+  		<%= label :body_pulla, 'Pull A' %>
+  	</td>
+  </table>
+
+  <table class ="table table-striped">
+  	<td>
+  		<%= f.radio_button :body, 'Lower b' %>
+  		<%= label :body_lowerb, 'Lower B' %>
+  	</td>
+  	<td>
+   		<%= f.radio_button :body, 'Upper b' %>
+  		<%= label :body_upperb, 'Upper B' %>
+  	</td>
+  	<td>
+  		<%= f.radio_button :body, 'Legs b' %>
+  		<%= label :body_legsb, 'Legs B' %>
+  	</td>
+  	<td>
+  		<%= f.radio_button :body, 'Push b' %>
+  		<%= label :body_pushb, 'Push B' %>
+  	</td>
+  	<td>
+  		<%= f.radio_button :body, 'Pull b' %>
+  		<%= label :body_pullb, 'Pull B' %>
+  	</td>
+  </table>
+
+  <p>
+    <%= f.label :date %><br>
+    <%= f.text_field :date, class: 'form-control', placeholder: "mm/dd/yy" %>
+  </p>
+ 
+  <p>
+    <%= f.label :log %><br>
+    <%= f.text_area :log, class: 'form-control', placeholder: "Enter Workout" %>
+  </p>
+ 
+  <p>
+    <%= f.submit "Save Workout", class: "btn btn-default btn-lg" %>
+  </p>
+
+
+<% end %>
+</div>  
+</div>

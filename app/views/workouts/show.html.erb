@@ -1,0 +1,26 @@
+<%= render :partial => 'layouts/topnav'%>
+<div class="container">
+<div class="jumbotron">
+<p>
+  <strong>Body Part:</strong>
+  <%= @workout.body %>
+</p>
+ 
+ <p>
+  <strong>Date:</strong>
+  <%= @workout.date %>
+</p>
+
+<p>
+  <strong>Log:</strong>
+  <%= simple_format(@workout.log) %>
+</p>
+
+<br>
+<br>
+<br>
+<br>
+ <p><%= link_to 'Edit', edit_workout_path(@workout) %>
+ <%= link_to 'Back', workouts_path %></p>
+ </div>
+ </div>

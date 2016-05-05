@@ -1,0 +1,28 @@
+<%= render :partial => 'layouts/topnav'%>
+<style>
+body{
+  background-image: url("wall.png");
+  }
+
+</style>
+
+<div class="container">
+<h1>Showing all PRs</h1>
+ 
+<table class = "table table-hover">
+  <tr>
+    <th>Body Part</th>
+    <th>Weight</th>
+  </tr>
+  <% @personals.each do |personal| %>
+    <tr>
+      <td><%= personal.title %></td>
+      <td><%= personal.text %></td>
+      <td><%= link_to 'Destroy', personal_path(personal),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+  <% end %>
+</table>
+</div>

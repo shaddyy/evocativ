@@ -1,0 +1,176 @@
+<%= render :partial => 'layouts/topnav'%>
+<style>
+body{
+  background-image: url("wall.png");
+  }
+
+</style>
+
+<div class="container">
+<h1>Showing all Workouts</h1>
+ 
+<table class = "table table-hover">
+  <tr>
+    <th>Body Part</th>
+    <th>Date</th>
+    <th>Show</th>
+    <th>Edit</th>
+    <th>Destroy</th>
+  </tr>
+  <% @workouts.each do |workout| %>
+<!--A Split-->  
+  <% if(params[:view] == "legsa")%>
+    <% if  (workout.body == "Legs a") %>
+    <tr>
+      <td><%= workout.body %></td>
+      <td><%= workout.date %></td>
+      <td><%= link_to 'Show', workout_path(workout) %></td>
+      <td><%= link_to 'Edit', edit_workout_path(workout) %></td>
+      <td><%= link_to 'Destroy', workout_path(workout),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+    <% end %>
+
+  <%elsif (params[:view] == "lowera")%>
+    <% if workout.body == "Lower a" %>
+    <tr>
+      <td><%= workout.body %></td>
+      <td><%= workout.date %></td>
+      <td><%= link_to 'Show', workout_path(workout) %></td>
+      <td><%= link_to 'Edit', edit_workout_path(workout) %></td>
+      <td><%= link_to 'Destroy', workout_path(workout),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+    <% end %>
+
+  <%elsif (params[:view] == "uppera")%>
+    <% if workout.body == "Upper a" %>
+    <tr>
+      <td><%= workout.body %></td>
+      <td><%= workout.date %></td>
+      <td><%= link_to 'Show', workout_path(workout) %></td>
+      <td><%= link_to 'Edit', edit_workout_path(workout) %></td>
+      <td><%= link_to 'Destroy', workout_path(workout),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+    <% end %>
+
+  <%elsif (params[:view] == "pusha")%>
+    <% if workout.body == "Push a" %>
+    <tr>
+      <td><%= workout.body %></td>
+      <td><%= workout.date %></td>
+      <td><%= link_to 'Show', workout_path(workout) %></td>
+      <td><%= link_to 'Edit', edit_workout_path(workout) %></td>
+      <td><%= link_to 'Destroy', workout_path(workout),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+    <% end %>
+
+  <%elsif (params[:view] == "pulla")%>
+    <% if workout.body == "Pull a" %>
+    <tr>
+      <td><%= workout.body %></td>
+      <td><%= workout.date %></td>
+      <td><%= link_to 'Show', workout_path(workout) %></td>
+      <td><%= link_to 'Edit', edit_workout_path(workout) %></td>
+      <td><%= link_to 'Destroy', workout_path(workout),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+    <% end %>  
+<!--B split-->
+     <%elsif(params[:view] == "legsb")%>
+    <% if  (workout.body == "Legs b") %>
+    <tr>
+      <td><%= workout.body %></td>
+      <td><%= workout.date %></td>
+      <td><%= link_to 'Show', workout_path(workout) %></td>
+      <td><%= link_to 'Edit', edit_workout_path(workout) %></td>
+      <td><%= link_to 'Destroy', workout_path(workout),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+    <% end %>
+
+  <%elsif (params[:view] == "lowerb")%>
+    <% if workout.body == "Lower b" %>
+    <tr>
+      <td><%= workout.body %></td>
+      <td><%= workout.date %></td>
+      <td><%= link_to 'Show', workout_path(workout) %></td>
+      <td><%= link_to 'Edit', edit_workout_path(workout) %></td>
+      <td><%= link_to 'Destroy', workout_path(workout),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+    <% end %>
+
+  <%elsif (params[:view] == "upperb")%>
+    <% if workout.body == "Upper b" %>
+    <tr>
+      <td><%= workout.body %></td>
+      <td><%= workout.date %></td>
+      <td><%= link_to 'Show', workout_path(workout) %></td>
+      <td><%= link_to 'Edit', edit_workout_path(workout) %></td>
+      <td><%= link_to 'Destroy', workout_path(workout),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+    <% end %>
+
+  <%elsif (params[:view] == "pushb")%>
+    <% if workout.body == "Push b" %>
+    <tr>
+      <td><%= workout.body %></td>
+      <td><%= workout.date %></td>
+      <td><%= link_to 'Show', workout_path(workout) %></td>
+      <td><%= link_to 'Edit', edit_workout_path(workout) %></td>
+      <td><%= link_to 'Destroy', workout_path(workout),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+    <% end %>
+
+  <%elsif (params[:view] == "pullb")%>
+    <% if workout.body == "Pull b" %>
+    <tr>
+      <td><%= workout.body %></td>
+      <td><%= workout.date %></td>
+      <td><%= link_to 'Show', workout_path(workout) %></td>
+      <td><%= link_to 'Edit', edit_workout_path(workout) %></td>
+      <td><%= link_to 'Destroy', workout_path(workout),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+    <% end %>  
+
+    <% else %>
+    <tr>
+      <td><%= workout.body %></td>
+      <td><%= workout.date %></td>
+      <td><%= link_to 'Show', workout_path(workout) %></td>
+      <td><%= link_to 'Edit', edit_workout_path(workout) %></td>
+      <td><%= link_to 'Destroy', workout_path(workout),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+
+    </tr>
+    <%end%>
+  <% end %>
+</table>
+</div>

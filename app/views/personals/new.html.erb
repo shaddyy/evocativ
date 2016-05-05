@@ -1,0 +1,48 @@
+<%= render :partial => 'layouts/topnav'%>
+
+<style>
+ul
+{
+    list-style-type: none;
+}
+</style>
+<div class="container">
+<h1>New PR</h1>
+
+<%= form_for :personal, url: personals_path do |f| %>
+
+<% if @personal.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@personal.errors.count, "error") %> prohibited
+        this personal from being saved:
+      </h2>
+      <ul>
+        <% @personal.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<div class="jumbotron">
+ <h3>Body Part:</h3>
+<p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+  </p>
+ 
+  <p>
+    <%= f.submit "Save personal", class: "btn btn-default btn-lg" %>
+  </p>
+
+
+<% end %>
+</div>  
+</div>
